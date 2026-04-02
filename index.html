@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Direct Chat Without Save Number</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: 'Segoe UI', sans-serif;
+        background: #e0e5ec;
+        color: #333;
+        text-align: center;
+    }
+
+    header {
+        padding: 20px;
+        font-size: 22px;
+        font-weight: 600;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    .card {
+        max-width: 400px;
+        margin: auto;
+        padding: 25px;
+        border-radius: 20px;
+        background: #e0e5ec;
+        box-shadow: 8px 8px 16px #b8bec7,
+                    -8px -8px 16px #ffffff;
+    }
+
+    input {
+        width: 100%;
+        padding: 12px;
+        border-radius: 10px;
+        border: none;
+        outline: none;
+        margin-bottom: 15px;
+        background: #e0e5ec;
+        box-shadow: inset 4px 4px 8px #b8bec7,
+                    inset -4px -4px 8px #ffffff;
+        font-size: 16px;
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+        border-radius: 10px;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+        background: #e0e5ec;
+        box-shadow: 4px 4px 8px #b8bec7,
+                    -4px -4px 8px #ffffff;
+        transition: 0.2s;
+    }
+
+    button:active {
+        box-shadow: inset 4px 4px 8px #b8bec7,
+                    inset -4px -4px 8px #ffffff;
+    }
+
+    .cta {
+        margin: 25px 0;
+    }
+
+    .cta a {
+        display: inline-block;
+        padding: 14px 20px;
+        border-radius: 12px;
+        text-decoration: none;
+        color: #fff;
+        background: #ff4d6d;
+        font-weight: bold;
+        animation: heartbeat 1.5s infinite;
+    }
+
+    @keyframes heartbeat {
+        0% { transform: scale(1); }
+        25% { transform: scale(1.05); }
+        50% { transform: scale(1); }
+        75% { transform: scale(1.08); }
+        100% { transform: scale(1); }
+    }
+
+    .content {
+        max-width: 700px;
+        margin: auto;
+        text-align: left;
+        padding: 15px;
+        line-height: 1.6;
+    }
+
+    .features {
+        max-width: 600px;
+        margin: 20px auto;
+        text-align: left;
+    }
+
+    .features ul {
+        padding-left: 20px;
+    }
+
+    @media (max-width: 480px) {
+        header {
+            font-size: 18px;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<header>Direct Chat Without Save Number</header>
+
+<div class="container">
+
+    <!-- TOOL (TOP PRIORITY) -->
+    <div class="card">
+        <input type="text" id="phone" placeholder="Enter WhatsApp Number (with country code)">
+        <input type="text" id="message" placeholder="Optional Message">
+        <button onclick="startChat()">Start Chat</button>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta">
+        <a href="https://directwapp.com/" target="_blank">
+            ❤️ Explore Premium Version
+        </a>
+    </div>
+
+    <!-- SEO CONTENT -->
+    <div class="content">
+        <h2>Start WhatsApp Chat Without Saving Number</h2>
+        <p>
+            This simple and efficient tool allows you to start a WhatsApp chat instantly without saving the contact to your phone. Whether you're contacting a business, a temporary client, or someone you don’t need to store permanently, this tool helps streamline the process.
+        </p>
+
+        <p>
+            Normally, WhatsApp requires users to save a number before initiating a chat. However, with this tool, you can bypass that step entirely. Just enter the phone number with the correct country code, type an optional message, and click "Start Chat" to begin instantly.
+        </p>
+
+        <p>
+            This is especially useful for freelancers, business owners, marketers, and anyone who communicates with new contacts regularly. It saves time, keeps your contact list clean, and improves productivity.
+        </p>
+
+        <h3>How to Use</h3>
+        <ol>
+            <li>Enter the phone number including country code.</li>
+            <li>Add an optional message if needed.</li>
+            <li>Click "Start Chat".</li>
+            <li>You will be redirected to WhatsApp instantly.</li>
+        </ol>
+    </div>
+
+    <!-- FEATURES -->
+    <div class="features">
+        <h3>Key Features</h3>
+        <ul>
+            <li>⚡ Instant WhatsApp chat without saving number</li>
+            <li>📱 Fully mobile responsive design</li>
+            <li>🎯 Clean and distraction-free interface</li>
+            <li>🔒 No data storage or tracking</li>
+            <li>💡 Lightweight and fast performance</li>
+            <li>🎨 Modern Neumorphism UI design</li>
+        </ul>
+    </div>
+
+</div>
+
+<script>
+function startChat() {
+    let phone = document.getElementById("phone").value.trim();
+    let message = document.getElementById("message").value.trim();
+
+    if (!phone) {
+        alert("Please enter a phone number with country code.");
+        return;
+    }
+
+    phone = phone.replace(/\D/g, "");
+
+    let url = "https://wa.me/" + phone;
+
+    if (message) {
+        url += "?text=" + encodeURIComponent(message);
+    }
+
+    window.open(url, "_blank");
+}
+</script>
+
+</body>
+</html>
